@@ -30,7 +30,5 @@ func main() {
 		jobs = append(jobs, strings.TrimSpace(s.Text()))
 	})
 
-	for _, j := range jobs {
-		fmt.Printf("%s\n", j)
-	}
+	fmt.Print(strings.Join(jobs, "\n"))
 }
