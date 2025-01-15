@@ -80,8 +80,8 @@ func main() {
 	defer cancel()
 
 	// Start scraping tasks
+	wg.Add(len(tasks))
 	for _, task := range tasks {
-		wg.Add(1)
 		go func(task scrapeTask) {
 			defer wg.Done()
 			scrape(ctx, task, resChan, errChan)
